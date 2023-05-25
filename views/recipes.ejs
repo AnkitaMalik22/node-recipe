@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recipe</title>
+    <style>
+      body{
+        background-color: tomato;
+        color: white;
+        padding: 1rem;
+        font-family: sans-serif;
+      }
+      .recipes{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        width: 100%;
+      }
+      .recipe-box{
+        width: 100%;
+        margin-bottom: 1rem;
+        background-color: white;
+        color: black;
+        padding: 1rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.3rem black;
+
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Recipes</h1>
+    <div class="recipes">
+      <% recipes.forEach(recipe => { %>
+        <div class="recipe-box">
+        <h2>Recipe: <%= recipe.receipeName %></h2>
+        <p>Time: <%= recipe.receipeTime %></p>
+        <ul>
+          <% recipe.ingredeints.forEach(ingredient => { %>
+            <li><%= ingredient %></li>
+          <% }); %>
+        </ul>
+        <p>Serves: <%= recipe.serves %></p>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
+
